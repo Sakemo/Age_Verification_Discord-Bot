@@ -1,0 +1,7 @@
+discord
+discord.py
+datetime
+asyncio
+sqlite3
+os
+dotenv
