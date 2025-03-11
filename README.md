@@ -1,30 +1,50 @@
-# 🏴‍☠️ Chopper - Bot de Verificação de Idade  
+# Chopper - Bot de Verificação para Discord
 
-Chopper é um bot para Discord desenvolvido para auxiliar na moderação, garantindo que apenas usuários verificados tenham acesso ao servidor. Ele verifica a idade dos membros via DM, registra aniversários e mantém logs organizados.
+Chopper é um bot para Discord projetado para verificar a idade de novos membros automaticamente, garantindo que apenas maiores de 18 anos permaneçam no servidor. Ele utiliza um sistema de verificação de aniversário e pode registrar logs em um canal específico.
 
-## 🚀 Funcionalidades  
-- 📩 **Verificação via DM**: Envia uma mensagem privada para o usuário confirmar a idade.  
-- 🔒 **Controle de Acesso**: Expulsa automaticamente usuários que não completarem a verificação.  
-- 📜 **Registro de Aniversários**: Adiciona, edita, exclui e lista aniversários dos membros.  
-- 📌 **Logs de Moderação**: Registra todas as ações de verificação e modificação de dados.  
+## Recursos
 
-## 📖 Comandos Principais  
-- `/verify` → Inicia a verificação de idade.  
-- `/age_add` → Adiciona manualmente um aniversário.  
-- `/age_edit` → Edita a data de aniversário de um usuário.  
-- `/age_list` → Lista todos os registros de aniversário.  
-- `/chopper_log` → Define o canal para logs do bot.  
+- **Verificação automática de idade:** Ao entrar no servidor, o bot solicita a verificação via DM.
+- **Banimento automático:** Usuários abaixo de 18 anos são banidos automaticamente.
+- **Canal temporário de verificação:** O bot cria um canal exclusivo para a verificação de cada usuário.
+- **Logs de moderação:** Registra ações de verificação e banimentos em um canal configurado.
+- **Comandos interativos:** Consulta, adiciona, edita e remove aniversários.
 
-## 🛠️ Instalação e Uso  
-1. **Adicione o Chopper ao seu servidor**.  
-https://discord.com/oauth2/authorize?client_id=1333034229914796115
+## Instalação
 
-2. **Configure o canal de logs com** `/chopper_log`.  
-3. **Use `/verify` para iniciar a verificação de usuários**.  
+Adicione o Chopper ao seu servidor utilizando o link abaixo:
 
-## 📌 Contribuição  
-Sinta-se à vontade para abrir uma issue ou pull request!  
+[Adicionar ao Discord](https://discord.com/api/oauth2/authorize?client_id=1333034229914796115&permissions=8&scope=bot)
 
----
+## Comandos Principais
 
-🎯 **Feito para manter seu servidor seguro e organizado!**
+- **`/chopper_log <canal>`:** Define um canal para armazenar os logs das verificações.
+- **`/age <usuário>`:** Consulta a data de aniversário de um usuário.
+- **`/age_add <usuário> <data>`:** Adiciona a data de aniversário de um usuário.
+- **`/age_edit <usuário> <nova_data>`:** Edita a data de aniversário registrada para um usuário.
+- **`/age_delete <usuário>`:** Remove a data de aniversário de um usuário.
+- **`/age_list`:** Lista todos os aniversários registrados.
+- **`/age_id_verified <usuário>`:** Marca um usuário como verificado.
+- **`/verify [usuário]`:** Inicia o processo de verificação via DM para o usuário (ou para outro, se especificado).
+
+## Configuração e Uso
+
+1. **Convide o bot para o seu servidor** através do link de instalação.
+2. **Configure o canal de logs** usando o comando `/chopper_log <#canal>`.
+3. **Verificação automática:** Quando um novo membro entra, o bot cria um canal temporário e solicita a data de aniversário.
+4. **Administração:** Use os comandos para gerenciar os registros de aniversários conforme necessário.
+
+## Tecnologias Utilizadas
+
+- Python
+- discord.py
+- SQLite
+- dotenv
+
+## Contribuição
+
+Sinta-se à vontade para contribuir! Abra uma issue ou envie um pull request com melhorias.
+
+## Licença
+
+Este projeto está sob a licença MIT.
